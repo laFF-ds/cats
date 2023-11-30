@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/components/catinfo.js"></script>
+    <script defer src="assets/js/components/catfact.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <span>CAT</span>
+                <img class="logo" src="assets/cat-whiskers.svg" alt="">
+                <span>FACTS</span>
+            </div>
+            <div class="icon-container">
+                <a href="/favorites"><img id="favorite-icon" class="header-icon" src="assets/favorite.svg" alt="">Favorites</a>
+            </div>
+        </div>      
+    </header>
+    <main class="login-container">
+        <div>
+            <form class="registration-form" action="">
+                <label for="email">Email:</label><br>
+                <input class="input-field" type="email" id="email" name="email" placeholder="cat@pet.com"><br>
+                <label for="username">Username:</label><br>
+                <input class="input-field" type="text" id="username" name="username" placeholder="Kitten1337"><br>
+                <label for="password">Password:</label><br>
+                <input class="input-field" type="password" id="password" name="password" placeholder="Password"><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <section class="cat-hero cat-hero-black">
+            <article>
+                <p>Creating an account allows you to favorite cat facts and information on different cat breeds.</p>
+                <p>The frequency of a domestic cat's purr is the same at which muscles and bones repair themselves.</p>
+            </article>
+            <img src="assets/cat-glasses.jpg" alt="">
+        </section>
+    </main> 
+</body>
+</html>
