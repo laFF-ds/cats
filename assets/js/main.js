@@ -39,15 +39,15 @@ function getCookie(name)
         ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
-
-if(getCookie('cat'))
-{
-    logoutButton.insertAdjacentHTML('beforeend', "<a href='/logout'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''>Logout</a>")
-}
-else
-{
-    logoutButton.insertAdjacentHTML('beforeend', "<a href='/login'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''>Login</a>")
-}
+// console.log(getCookie('cat'))
+// if(getCookie('cat'))
+// {
+//     logoutButton.insertAdjacentHTML('beforeend', "<a href='/logout'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''>Logout</a>")
+// }
+// else
+// {
+//     logoutButton.insertAdjacentHTML('beforeend', "<a href='/login'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''>Login</a>")
+// }
 
 // FETCH REQUESTS
 

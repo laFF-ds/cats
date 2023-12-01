@@ -23,10 +23,27 @@
             </div>
             <div class="icon-container">
                 <a href="/favorites"><img id="favorite-icon" class="header-icon" src="assets/favorite.svg" alt="">Favorites</a>
+                <% if (messages.loggedin) { %>
+                    <a href='/logout'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''><span>
+                        <%= messages.loggedin %>
+                        </span>
+                    </a>
+                <%  }   %>
+                <% if (messages.loggedout) { %>
+                    <a href='/login'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''><span>
+                        <%= messages.loggedout %>
+                        </span>
+                    </a>
+                <%  }   %>
             </div>
         </div>      
     </header>
     <main id="main" class="main">
+        <% if (messages.nofavorites) { %>
+            <span class="favorites-flash-message">
+                <%= messages.nofavorites %>
+            </span>
+        <%  }   %>
         <section class="cat-hero cat-hero-orange">
             <article>
                 Like birds, cats have a homing ability that uses its biological clock, the angle of the sun, and the Earth's magnetic field. A cat taken far from its home can return to it. But if a cat's owners move far from its home, the cat can't find them.

@@ -23,10 +23,27 @@
             </div>
             <div class="icon-container">
                 <a href="/favorites"><img id="favorite-icon" class="header-icon" src="assets/favorite.svg" alt="">Favorites</a>
+                <% if (messages.loggedin) { %>
+                    <a href='/logout'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''><span>
+                        <%= messages.loggedin %>
+                        </span>
+                    </a>
+                <%  }   %>
+                <% if (messages.loggedout) { %>
+                    <a href='/login'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''><span>
+                        <%= messages.loggedout %>
+                        </span>
+                    </a>
+                <%  }   %>
             </div>
         </div>      
     </header>
     <main class="login-container">
+        <% if (messages.nofavorites) { %>
+            <span class="favorites-flash-message">
+                <%= messages.nofavorites %>
+            </span>
+        <%  }   %>
         <div>
             <form class="registration-form" action="">
                 <label for="email">Email:</label><br>

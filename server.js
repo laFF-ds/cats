@@ -5,8 +5,8 @@ const app = express()
 const mongoose = require('mongoose')
 const sessions = require('express-session')
 const mongoStore = require('connect-mongo')
+const flash = require('express-flash')
 const cors = require('cors')
-
 
 mongoose.connect(process.env.DATABASE_URL)
 const db = mongoose.connection
@@ -44,10 +44,20 @@ app.use(sessions({
     }),
 }))
 
+app.use(flash())
 
 app.get('/', (req, res) => {
     session = req.session
-    res.render('index.ejs')
+    if(session.userid)
+    {
+        req.flash('loggedin', 'Log Out')
+        res.render('index.ejs')
+    }
+    else
+    {
+        req.flash('loggedout', 'Log In')
+        res.render('index.ejs')
+    }
 })
 
 app.get('/register', (req, res) => {
@@ -59,14 +69,23 @@ app.get('/login', (req, res) => {
 })
 
 app.get('/favorites', (req, res) => {
-    res.render('favorites.ejs')
+    if(req.session.userid)
+    {
+        res.render('favorites.ejs')
+    }
+    else
+    {
+        req.flash('nofavorites', 'please login to view favorites')
+        res.redirect('/')
+        
+    }
 })
 
 app.get('/logout', (req, res) => 
 {
     if (req.session && req.session.cookie) 
     {
-        res.cookie('cat', null, 
+        res.cookie('cat', null,
         {
             maxAge: 0
         })
