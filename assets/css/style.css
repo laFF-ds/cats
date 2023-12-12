@@ -294,24 +294,3 @@ body
     min-width: 100%;
     min-height: 50px;
 }
-/* .header
-{
-    max-height: 200px;
-    display: flex;
-}
-
-.header > *:nth-child(1)
-{
-    flex: 1 1 50%;
-    display: flex;
-    justify-content: start;
-}
-
-.header > *:nth-child(2)
-{
-    flex: 1 1 50%;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    gap: 1rem;
-} */

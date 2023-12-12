@@ -5,7 +5,7 @@ const favoritesURL = "http://localhost:3000/user/favorites"
 const userURL = "http://localhost:3000/user/users"
 const infoURL = "https://api.thecatapi.com/v1/"
 const factURL = "https://cat-fact.herokuapp.com/facts/"
-// UI
+// Forms & Containers
 const registrationForm = document.querySelector('.registration-form')
 const loginForm = document.querySelector('.login-form')
 const logoutButton = document.querySelector('.icon-container')
@@ -19,18 +19,7 @@ const usernameInput = document.getElementById('username')
 const passwordInput = document.getElementById('password')
 
 let favoriteInfoButton
-// console.log(document.cookie.match('cat')[0])
 
-// if(document.cookie.match('cat')[0] === 'cat')
-// {
-//     console.log('Its a cat')
-// }
-// else
-// {
-//     console.log('its not a cat')
-// }
-
-// LOGIN & REGISTRATION 
 function getCookie(name) 
 {    
     let matches = document.cookie.match(new RegExp
@@ -39,18 +28,8 @@ function getCookie(name)
         ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
-// console.log(getCookie('cat'))
-// if(getCookie('cat'))
-// {
-//     logoutButton.insertAdjacentHTML('beforeend', "<a href='/logout'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''>Logout</a>")
-// }
-// else
-// {
-//     logoutButton.insertAdjacentHTML('beforeend', "<a href='/login'><img id='login-icon' class='header-icon' src='assets/login-cat.svg' alt=''>Login</a>")
-// }
 
-// FETCH REQUESTS
-
+// LOGIN & REGISTRATION 
 // CREATE ACCOUNT
 if(registrationForm)
 {
@@ -73,7 +52,6 @@ if(registrationForm)
             })
         })
         .then(() => window.location.href="/login")
-        console.log("done?")
     })
 }
 
@@ -81,7 +59,6 @@ if(registrationForm)
 if(loginForm)
 {
     loginForm.addEventListener('submit', (e) => {
-        console.log('hi')
         e.preventDefault()
         fetch(loginURL, 
         {
@@ -97,7 +74,6 @@ if(loginForm)
             })
         })
         .then(() => window.location.href="/")
-        console.log("done?")
     })
 }
 
@@ -119,7 +95,6 @@ async function getImages(id)
         method: "GET"
     })
     const data = await res.json()
-    // console.log(data)
     return data
 }
 
@@ -231,7 +206,6 @@ function displayFactFavorites()
             .then(res => res.json())
             .then(async data => 
             {
-                console.log(data)
                 try 
                 {
                     // const catFacts = await getFacts()
@@ -318,7 +292,6 @@ async function getFacts()
             verifiedFacts.push(fact)
         }
     })
-    console.log(verifiedFacts)
     return verifiedFacts
 }
 
